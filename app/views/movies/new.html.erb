@@ -1,0 +1,7 @@
+<h2>Add a movie:</h2>
+
+<%= form_with scope: :movie, url: movies_path, local: true do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_field :year %>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,13 @@
+<%= link_to 'Add a new actor', new_actor_path %>
+<table>
+   <tr>
+       <th>ID</th>
+       <th>name</th>
+   </tr> 
+   <tr>
+      <% @actors.each do |actor| %>
+         <td> <%= actor.id %> </td>
+         <td> <%= actor.name %> </td>
+      <% end %>
+   </tr>
+</table>
