@@ -1,0 +1,14 @@
+<%= link_to 'Add a new director', new_director_path %>
+<table>
+   <tr>
+       <th>ID</th>
+       <th>name</th>
+   </tr> 
+   
+   <% @directors.each do |director| %>
+   <tr>
+      <td> <%= director.id %> </td>
+      <td> <%= director.name %> </td>
+   </tr>
+   <% end %>
+</table>

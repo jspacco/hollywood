@@ -1,0 +1,7 @@
+<h2>Add a director:</h2>
+
+<%= form_with scope: :director, url: directors_path, local: true do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
+ 

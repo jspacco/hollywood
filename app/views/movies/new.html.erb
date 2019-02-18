@@ -1,7 +1,14 @@
 <h2>Add a movie:</h2>
 
 <%= form_with scope: :movie, url: movies_path, local: true do |form| %>
-  <%= form.text_field :title %>
-  <%= form.text_field :year %>
+  Title: <%= form.text_field :title %> <br>
+  Year: <%= form.text_field :year %> <br>
+  Director: 
+  <select name="director_id">
+    <option value="" selected="selected">Please select</option>
+    <% @directors.each do |director| %>
+      <option value="<%= director.id %>"> <%= director.name %></option>
+    <% end %>
+  </select>
   <%= form.submit %>
 <% end %>

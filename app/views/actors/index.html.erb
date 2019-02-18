@@ -4,10 +4,11 @@
        <th>ID</th>
        <th>name</th>
    </tr> 
+   
+   <% @actors.each do |actor| %>
    <tr>
-      <% @actors.each do |actor| %>
-         <td> <%= actor.id %> </td>
-         <td> <%= actor.name %> </td>
-      <% end %>
+      <td> <%= actor.id %> </td>
+      <td> <%= actor.name %> </td>
    </tr>
+   <% end %>
 </table>
