@@ -1,10 +1,36 @@
+<%# This creates an HTML link. Believe it or not, link_to is a function,
+  but we are again omitting the parentheses as is so often done in Ruby.
+  So, link_to requires at least 2 parameters: The string that will be the link
+  (which in this case is 'Add a new actor') and the path for the link.
+  Here we use the new_actor_path function, which was created when we declared
+  in config/routes.rb that we want REST resources created for actors.
+  These path helper functions are listed here:
+
+  https://guides.rubyonrails.org/routing.html
+
+  So, things like this:
+HTTP Verb Path  Controller#Action	Named Helper
+---------------------------------------------
+GET /photos images#index  photos_path
+GET /photos/new images#new  new_photo_path
+POST  /photos images#create photos_path
+GET /photos/:id images#show photo_path(:id)
+GET /photos/:id/edit  images#edit edit_photo_path(:id)
+PATCH/PUT /photos/:id images#update photo_path(:id)
+DELETE  /photos/:id images#destroy  photo_path(:id)
+
+This would be if we created REST resources for photos.
+
+also of interest here is
+
+ %>
 <%= link_to 'Add a new actor', new_actor_path %>
 <table>
    <tr>
        <th>ID</th>
        <th>name</th>
-   </tr> 
-   
+   </tr>
+
    <% @actors.each do |actor| %>
    <tr>
       <td> <%= actor.id %> </td>

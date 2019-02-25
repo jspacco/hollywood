@@ -1,16 +1,31 @@
 <h2>Add a movie:</h2>
 
+<%#
+This form creates a movie. Two of the inputs are text fields,
+and the third one lets us select any director that we've added
+as the director.
+
+form_with is a function
+'scope: :movie' tells us that we are creating a movie, so there
+  will be a key called "movie" in the POST
+
+%>
 <%= form_with scope: :movie, url: movies_path, local: true do |form| %>
+  <%#
+  These text fields are bound to the form we created above.
+  %>
   Title: <%= form.text_field :title %> <br>
   Year: <%= form.text_field :year %> <br>
-  Director: 
-  <!--
+  Director:
   <select name="director_id">
     <option value="" selected="selected">Please select</option>
-    <%# @directors.each do |director| %>
-      <option value="<%# director.id %>"> <%# director.name %></option>
-    <%# end %>
+    <%# This option has a non-sensical value and will trigger a rollback by the DB handler %>
+    <option value="0"> **Trigger a rollback** </option>
+    <%# iterate through all of the directors, and create an option for each one %>
+    <% @directors.each do |director| %>
+      <option value="<%= director.id %>"> <%= director.name %></option>
+    <% end %>
   </select>
-  -->
+  <%# submit button at the bottom of the form %>
   <%= form.submit %>
 <% end %>
