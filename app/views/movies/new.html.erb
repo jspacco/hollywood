@@ -4,11 +4,13 @@
   Title: <%= form.text_field :title %> <br>
   Year: <%= form.text_field :year %> <br>
   Director: 
+  <!--
   <select name="director_id">
     <option value="" selected="selected">Please select</option>
-    <% @directors.each do |director| %>
-      <option value="<%= director.id %>"> <%= director.name %></option>
-    <% end %>
+    <%# @directors.each do |director| %>
+      <option value="<%# director.id %>"> <%# director.name %></option>
+    <%# end %>
   </select>
+  -->
   <%= form.submit %>
 <% end %>

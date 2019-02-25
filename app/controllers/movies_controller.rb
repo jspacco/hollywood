@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
         # to the directors table. So we are using the director_id that's in
         # the form to look up the actual director record. We can set this to a
         # director variable that looks like it's inside the movie table.
-        movie.director = Director.find_by(params[:director_id])
+        # movie.director = Director.find_by(params[:director_id])
  
         movie.save
         

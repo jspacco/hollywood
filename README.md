@@ -1,5 +1,10 @@
 # README
 
+Demo Rails project that is full of documentation
+
+* actors_controller describes the different controller methods and the paths that trigger them
+* 
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
