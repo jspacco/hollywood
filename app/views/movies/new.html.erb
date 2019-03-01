@@ -13,6 +13,9 @@ form_with is a function
 <%= form_with scope: :movie, url: movies_path, local: true do |form| %>
   <%#
   These text fields are bound to the form we created above.
+  Since we scoped this to :movie, the values here are bound to
+  That's why we say form.text_field rather than use the generic erb
+    template function for creating a text field.
   %>
   Title: <%= form.text_field :title %> <br>
   Year: <%= form.text_field :year %> <br>
